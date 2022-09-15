@@ -12,12 +12,14 @@ def get_coef(index, prompt):
     try:
         coef = float(coef_str)
     except:
+        print(prompt)
         coef_str = input()
         while True:
             try:
                 coef = float(coef_str)
                 break
             except:
+                print(prompt)
                 coef_str = input()
 
     return coef
@@ -49,8 +51,12 @@ def get_roots(a, b, c):
 
 def main():
     a = get_coef(1, 'Введите коэффициент А:')
+    if a == 0:
+        print("Биквадратного уравнения не получается (a == 0) ")
+        return
     b = get_coef(2, 'Введите коэффициент B:')
     c = get_coef(3, 'Введите коэффициент C:')
+
     # Вычисление корней
     roots = get_roots(a,b,c)
     # Вывод корней
