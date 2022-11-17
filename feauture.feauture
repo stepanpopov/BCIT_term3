@@ -1,0 +1,6 @@
+Feauture: Sorting
+    sorting abc
+    Scenario: Sort_abs
+        Given There is an array which is [4, -30, 30, 100, -100, 123, 1, 0, -1, -4]
+        When I sort1 this array
+        Then Array is [123, 100, -100, -30, 30, 4, -4, 1, -1, 0]
