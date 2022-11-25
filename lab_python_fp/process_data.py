@@ -1,29 +1,19 @@
 import json
 import sys
 
-from field import field
-from gen_random import gen_random
-from unique import Unique
-from print_result import print_result
-from cm_timer import cm_timer_1
+from lab_python_fp.field import field
+from lab_python_fp.gen_random import gen_random
+from lab_python_fp.unique import Unique
+from lab_python_fp.print_result import print_result
+from lab_python_fp.cm_timer import cm_timer_1
 
-
-
-try:
-    path = sys.argv[1]
-except:
-    path = "data_light.json"
-finally:
-    print(path)
-
-with open(path, 'r', encoding='utf8') as f:
-    data = json.load(f)
-
-
+@print_result
+def foo(a):
+    return a
 
 @print_result
 def f1(arg):
-    return sorted([i for i in Unique(field(data, 'job-name'), ignore_case=True)], 
+    return sorted([i for i in Unique(field(arg, 'job-name'), ignore_case=True)], 
                     key = lambda x: x.lower())
 
 @print_result
@@ -43,5 +33,14 @@ def f4(arg):
 
 
 if __name__ == '__main__':
+    try:
+        path = sys.argv[1]
+    except:
+        path = "data_light.json"
+    finally:
+        print(path)
+    with open(path, 'r', encoding='utf8') as f:
+        data = json.load(f)
+
     with cm_timer_1():
         f4(f3(f2(f1(data))))

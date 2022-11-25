@@ -10,7 +10,7 @@ def step_sort1_array(context):
     context.sorted_array = sort1(context.array)
 
 @when("I sort this array with lambda")
-def step_sort1_array(context):
+def step_sort2_array(context):
     context.sorted_array = sort2(context.array)
 
 @then("Array is [{array}]")
