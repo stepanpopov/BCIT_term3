@@ -13,6 +13,6 @@ def binomial_coefs():
 
 if __name__ == '__main__':
     bin_gen = binomial_coefs()
-    res = [next(bin_gen) for _ in range(11)]
+    res = [next(bin_gen) for _ in range(4)]
     for i in res:
         print(i)

@@ -11,11 +11,11 @@ def hello_world():
 @app.route('/num/<int:cnt>')
 def get_coef(cnt):
     bin_gen = binomial_coefs()
-    result = [next(bin_gen) for _ in range(cnt)]
+    result = [next(bin_gen) for _ in range(cnt + 1)]
     return result
 
 @app.route('/num/<int:cnt>/rectangle')
 def get_coef_render(cnt):
     bin_gen = binomial_coefs()
-    result = [next(bin_gen) for _ in range(cnt)]
+    result = [next(bin_gen) for _ in range(cnt + 1)]
     return render_template("num.html", result = result)
