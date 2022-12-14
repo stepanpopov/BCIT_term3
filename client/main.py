@@ -12,10 +12,6 @@ def get_data(cnt):
 
 
 if __name__ == '__main__':
-    url = 'http://127.0.0.1:5000/num/10'
-    # Вызовем сервис
-    r = requests.get(url)
-    print(r)
-    data = r.json()
+    data = get_data(10)
     print(data)
 

@@ -19,4 +19,3 @@ def get_coef_render(cnt):
     bin_gen = binomial_coefs()
     result = [next(bin_gen) for _ in range(cnt)]
     return render_template("num.html", result = result)
-
